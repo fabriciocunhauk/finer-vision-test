@@ -1,4 +1,5 @@
 import express from 'express';
+import { check, validationResult } from 'express-validator';
 import mysql from 'mysql';
 import dotenv from 'dotenv';
 
@@ -26,7 +27,22 @@ const db = mysql.createConnection({
 
 // DB details insertion
 
-app.post('/', (req, res) => {
+app.post('/', [
+    check('firstName').notEmpty().withMessage('First name cannot be empty'),
+    check('surname').notEmpty().withMessage('Surname cannot be empty'),
+    check('email').isEmail().withMessage('You need to enter a valid email'),
+    check('telephone').notEmpty().isLength({ min: 11 }).withMessage('Telephone cannot be empty or less than 11 digits long'),
+    check('gender').notEmpty().withMessage('Gender cannot be empty'),
+    check('dateOfBirth').notEmpty().withMessage('Date of birth cannot be empty'),
+    check('comments').notEmpty().withMessage('Comments cannot be empty'),
+], (req, res) => {
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+        console.log(errors);
+        return res.status(400).json(errors);
+    }
+
     const {
         firstName,
         surname,
@@ -45,6 +61,8 @@ app.post('/', (req, res) => {
     });
 });
 
+// Get data from DB
+
 app.get('/users', (req, res) => {
     const sqlInsert = `SELECT * FROM ${dbName}.${tableName}`;
 
@@ -58,5 +76,5 @@ app.listen(port, () => {
     db.connect((err) => {
         if (err) throw err;
         console.log('Database Conected');
-    })
+    });
 });
