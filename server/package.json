@@ -5,7 +5,8 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "create-database": "node createDatabase.js"
+    "create-database": "node createDatabase.js",
+    "dev": "npx nodemon server.js"
   },
   "author": "Fabricio Cunha",
   "license": "ISC",
