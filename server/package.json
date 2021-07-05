@@ -1,0 +1,17 @@
+{
+  "name": "finer-vision-test",
+  "version": "1.0.0",
+  "description": "test api",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "create-database": "node createDatabase.js"
+  },
+  "author": "Fabricio Cunha",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  }
+}
