@@ -29,14 +29,14 @@ connection.connect((err) => {
 
         connection.query(`USE ${dbName}`, function (err) {
             if (err) throw err;
-            console.log("Table Used");
+            console.log("Database Selected");
         });
 
         const createTable = `CREATE TABLE ${tableName} (id INT NOT NULL AUTO_INCREMENT, firstName VARCHAR(20) NOT NULL, surname VARCHAR(40) NOT NULL, email VARCHAR(40) NOT NULL, telephone VARCHAR(40) NOT NULL, gender VARCHAR(10), dateOfBirth VARCHAR(10), comments VARCHAR(255) NOT NULL, PRIMARY KEY (id));`;
 
         connection.query(createTable, function (err) {
             if (err) throw err;
-            console.log("Table created");
+            console.log("Created Table");
         });
 
         connection.end();

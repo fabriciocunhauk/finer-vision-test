@@ -22,7 +22,7 @@ const ShowResults = () => {
     return (
         <div className="card-container">
             <div className="card__container-header">
-                <Button content={"< Back"} onClick={handleRedirect} />
+                <Button style={{ marginRight: "40px" }} content={"< Back"} onClick={handleRedirect} />
             </div>
             <div className="container">
                 {data.map((user, index) => {

@@ -218,7 +218,7 @@ const FormFields = () => {
                                 className="accordion__input-field"
                                 type="tel"
                                 id="telephone"
-                                placeholder="00000000000"
+                                placeholder="07777777777"
                                 value={telephone}
                                 onChange={e => setTelephone(e.target.value)}
                             />
@@ -249,7 +249,7 @@ const FormFields = () => {
                                     className="accordion__input-date"
                                     type="text"
                                     id="date of birth"
-                                    placeholder="00"
+                                    placeholder="DD"
                                     value={day}
                                     onChange={e => setDay(e.target.value)}
                                 />
@@ -257,7 +257,7 @@ const FormFields = () => {
                                     className="accordion__input-date"
                                     type="text"
                                     id="step-3"
-                                    placeholder="00"
+                                    placeholder="MM"
                                     value={month}
                                     onChange={e => setMonth(e.target.value)}
                                 />
@@ -265,7 +265,7 @@ const FormFields = () => {
                                     className="accordion__input-date"
                                     type="text"
                                     id="step-3"
-                                    placeholder="0000"
+                                    placeholder="YYYY"
                                     value={year}
                                     onChange={e => setYear(e.target.value)}
                                 />

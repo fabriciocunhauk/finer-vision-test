@@ -54,7 +54,24 @@ app.post('/', [
         dateOfBirth,
         comments } = req.body;
 
-    const sqlInsert = `INSERT INTO ${tableName} (firstName, surname, email, telephone, gender, dateOfBirth, comments) VALUES ("${firstName}", "${surname}", "${email}", "${telephone}", "${gender}", "${dateOfBirth}", "${comments}")`;
+    const sqlInsert = `INSERT 
+    INTO ${tableName} (
+        firstName,
+         surname, 
+         email, 
+         telephone, 
+         gender, 
+         dateOfBirth, 
+         comments
+         ) VALUES (
+             "${firstName}", 
+             "${surname}", 
+             "${email}", 
+             "${telephone}", 
+             "${gender}", 
+             "${dateOfBirth}", 
+             "${comments}"
+             )`;
 
     db.query(sqlInsert, (err, results) => {
         if (err) throw err;
@@ -77,6 +94,6 @@ app.listen(port, () => {
     console.log(`Server running on port ${port}`);
     db.connect((err) => {
         if (err) throw err;
-        console.log('Database Conected');
+        console.log('Database Connected');
     });
 });
