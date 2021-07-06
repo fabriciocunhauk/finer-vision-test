@@ -2,6 +2,7 @@ import express from 'express';
 import { check, validationResult } from 'express-validator';
 import mysql from 'mysql';
 import dotenv from 'dotenv';
+import cors from 'cors';
 
 dotenv.config();
 
@@ -13,6 +14,7 @@ const tableName = process.env.DB_TABLE_NAME;
 
 const app = express();
 const port = 3001;
+app.use(cors());
 
 app.use(express.json());
 

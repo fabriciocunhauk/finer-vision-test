@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Button from './Button';
-import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
+// import api from '../services/api';
 
 import './form-field.css';
 
@@ -120,7 +121,7 @@ const FormFields = () => {
         return false;
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(handleButton1());
         console.log(handleButton2());
@@ -140,6 +141,8 @@ const FormFields = () => {
             return handleNextStep2();
 
         }
+        // await api.post('/', data)
+
         history.push('/users');
     }
 
@@ -187,7 +190,7 @@ const FormFields = () => {
                             />
                             <p className="alert-message">{emailAlertMessage}</p>
                         </div>
-                        <Button type="button" onClick={handleButton1} />
+                        <Button type="button" onClick={handleButton1} content={"Next >"} />
                     </div>
                 </div>
 
@@ -258,7 +261,7 @@ const FormFields = () => {
                                 <p className="alert-message">{yearAlertMessage}</p>
                             </div>
                         </div>
-                        <Button type="button" onClick={handleButton2} />
+                        <Button type="button" onClick={handleButton2} content={"Next >"} />
                     </div>
                 </div>
 
@@ -280,7 +283,7 @@ const FormFields = () => {
                             />
                             <p className="alert-message">{commentAlertMessage}</p>
                         </div>
-                        <Button style={{ marginTop: "90px" }} type="submit" />
+                        <Button style={{ marginTop: "90px" }} type="submit" content={"Next >"} />
                     </div>
                 </div>
             </form>
