@@ -77,6 +77,10 @@ select {
     outline: none;
 }
 
+.accordion__input-date::-webkit-input-placeholder {
+    text-align: center;
+}
+
 textarea {
     border-radius: 8px;
     box-shadow: inset 0 0 4px #000000;
@@ -84,13 +88,8 @@ textarea {
     outline: none;
 }
 
-button {
-    width: 100px;
-    height: 25px;
-    margin: 10px 10px 10px 390px;
-    border-radius: 8px;
-    cursor: pointer;
-    border: none;
-    background: #494FAD;
-    color: white;
+.alert-message {
+    color: red;
+    margin-top: -3px;
+    font-size: 12px;
 }
