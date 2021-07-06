@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from './Button';
 import { useHistory } from 'react-router-dom';
-// import api from '../services/api';
+import api from '../services/api';
 
 import './form-field.css';
 
@@ -27,6 +27,18 @@ const FormFields = () => {
     const [openAccordion1, setOpenAccordion1] = useState(false);
     const [openAccordion2, setOpenAccordion2] = useState(false);
     const [openAccordion3, setOpenAccordion3] = useState(false);
+
+    const data = {
+        "firstName": firstName,
+        "surname": surname,
+        "email": email,
+        "telephone": telephone,
+        "gender": gender,
+        "dateOfBirth": `${day}-${month}-${year}`,
+        "comments": comments
+    };
+
+    console.log(data.dateOfBirth);
 
     let history = useHistory()
 
@@ -141,7 +153,8 @@ const FormFields = () => {
             return handleNextStep2();
 
         }
-        // await api.post('/', data)
+
+        await api.post('/', data)
 
         history.push('/users');
     }
