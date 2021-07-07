@@ -70,6 +70,8 @@ const FormFields = () => {
     }
 
     const handleButton1 = () => {
+        let email_validator_regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
         if (!firstName) {
             setAlertMessage('You need to enter a name!')
         } else {
@@ -81,7 +83,7 @@ const FormFields = () => {
         } else {
             setSurnameAlertMessage('');
         }
-        if (!email) {
+        if (!email || !email_validator_regex.test(email)) {
             setEmailAlertMessage('You need to enter a valid email!');
         } else {
             setEmailAlertMessage('');
@@ -194,7 +196,6 @@ const FormFields = () => {
                             <input
                                 className="accordion__input-field"
                                 type="email" id="step-3"
-
                                 value={email}
                                 onChange={e => setEmail(e.target.value)}
                             />
