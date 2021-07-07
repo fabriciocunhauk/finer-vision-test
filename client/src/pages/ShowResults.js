@@ -28,17 +28,19 @@ const ShowResults = () => {
                 {data.map((user, index) => {
                     return (
                         <div className="card" key={index}>
-                            <div className="card__details">
+                            <div className="card__details-container">
                                 <div className="card__header">
                                     <p>{user.firstName}</p>
                                 </div>
-                                <p><span>First name:</span> {user.firstName}</p>
-                                <p><span>Surname: </span>{user.surname}</p>
-                                <p><span>email:</span> {user.email}</p>
-                                <p><span>Telephone:</span> {user.telephone}</p>
-                                <p><span>Gender:</span> {user.gender}</p>
-                                <p><span>Date of birth:</span>  {user.dateOfBirth}</p>
-                                <p><span>Comments:</span> {user.comments}</p>
+                                <div className="card__details">
+                                    <p><span>First name:</span> {user.firstName}</p>
+                                    <p><span>Surname: </span>{user.surname}</p>
+                                    <p><span>email:</span> {user.email}</p>
+                                    <p><span>Telephone:</span> {user.telephone}</p>
+                                    <p><span>Gender:</span> {user.gender}</p>
+                                    <p><span>Date of birth:</span>  {user.dateOfBirth}</p>
+                                    <p><span>Comments:</span> {user.comments}</p>
+                                </div>
                             </div>
                         </div>
                     );

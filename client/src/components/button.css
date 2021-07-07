@@ -7,4 +7,11 @@ button {
     border: none;
     background: #494FAD;
     color: white;
+    transition: all .5s ease-in-out;
+
+}
+
+button:hover {
+    background: #4902AA;
+    transition: all .5s ease-in-out;
 }
