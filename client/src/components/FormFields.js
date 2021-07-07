@@ -136,7 +136,7 @@ const FormFields = () => {
         e.preventDefault();
 
         if (!comments) {
-            return setCommentAlertMessage('You need to enter comment!');
+            return setCommentAlertMessage('You need to enter a comment max 255 characters long!');
         } else {
             setCommentAlertMessage('');
         }
@@ -287,7 +287,7 @@ const FormFields = () => {
                                 name="comments"
                                 rows="8"
                                 cols="40"
-                                maxLength="200"
+                                maxLength="255"
                                 value={comments}
                                 onChange={e => setComments(e.target.value)}
                             />
