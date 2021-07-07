@@ -28,6 +28,8 @@ const FormFields = () => {
     const [openAccordion2, setOpenAccordion2] = useState(false);
     const [openAccordion3, setOpenAccordion3] = useState(false);
 
+    const history = useHistory();
+
     const data = {
         "firstName": firstName,
         "surname": surname,
@@ -38,9 +40,6 @@ const FormFields = () => {
         "comments": comments
     };
 
-    console.log(data.dateOfBirth);
-
-    let history = useHistory()
 
     const handleNextStep1 = () => {
         if (openAccordion1) {
@@ -135,8 +134,6 @@ const FormFields = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(handleButton1());
-        console.log(handleButton2());
 
         if (!comments) {
             return setCommentAlertMessage('You need to enter comment!');
