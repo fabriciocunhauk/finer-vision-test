@@ -74,7 +74,7 @@ For this project, the server routes can be seen below:
 Adds a user to the database
 
 ```
-api.post("/")
+api.get("/")
 ```
 
 Gets a list of all the users from the database
