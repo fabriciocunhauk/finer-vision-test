@@ -107,18 +107,18 @@ const FormFields = () => {
             setGenderAlertMessage('');
         }
 
-        if (!day || !regex.test(day) || (day.length < 2 || day.length > 2)) {
+        if ((day > 31) || !regex.test(day) || (day.length < 2 || day.length > 2)) {
             setDayAlertMessage('You need to enter a valid day!')
         } else {
             setDayAlertMessage('');
         }
-        if (!month || !regex.test(month) || (month.length < 2 || month.length > 2)) {
+        if ((month > 12) || !regex.test(month) || (month.length < 2 || month.length > 2)) {
             setMonthAlertMessage('You need to enter a valid month!')
         } else {
             setMonthAlertMessage('');
         }
 
-        if (!year || !regex.test(year) || (year.length < 4 || year.length > 4)) {
+        if ((year > 2021) || !regex.test(year) || (year.length < 4 || year.length > 4)) {
             setYearAlertMessage('You need to enter a valid year!')
         } else {
             setYearAlertMessage('');
